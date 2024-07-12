@@ -5,7 +5,10 @@ local KJ_Animations = {
     ["Ravage_STARTUP"] = 123456789,
     ["Ravage_FULL"] = 123456789,
     ["Ravage_VICTIM"] = 123456789,
-    ["SwiftSweep_HIT"] = 123456789
+    ["SwiftSweep_HIT"] = 123456789,
+    ["KJ_Ultimate"] = 123456789,
+    ["StoicBomb"] = 123456789,
+    ["202020DropKick_RUN"] = 123456789,
 }
 
 -- variables
@@ -14,7 +17,7 @@ local plr = players.LocalPlayer
 local character = plr.Character or plr.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 
--- main
+-- functions
 
 local function stop_all_animations()
     for _, track in ipairs(humanoid:GetPlayingAnimationTracks()) do
@@ -27,7 +30,7 @@ local function on_animation_played(player, animation_id)
 
 end
 
--- my lazy ass used chatgpt for this
+-- My lazy ass used ChatGPT for this.
 local function onAnimationPlayed(humanoid, animationTrack)
     local player = players:GetPlayerFromCharacter(humanoid.Parent)
     if player then
@@ -58,8 +61,37 @@ players.PlayerAdded:Connect(onPlayerAdded)
 for _, Player in pairs(players:GetPlayers()) do
     onPlayerAdded(Player)
 end
---chatgpt code ends here
+-- ChatGPT code ends here
 
 local function give_moveset()
+    -- remove moves
+    for _, v in pairs(plr.Backpack:GetChildren()) do
+        v:Destroy()
+    end
+    for _, v in pairs(character:GetChildren()) do
+        if v:IsA("Tool") then
+            v:Destroy()
+        end
+    end
 
+    -- give new moves
+    Instance.new("Tool", plr.Backpack).Name = "Ravage"
+    Instance.new("Tool", plr.Backpack).Name = "Swift Sweep"
+    Instance.new("Tool", plr.Backpack).Name = "Collateral Ruin"
+
+    local function give_ult_moveset()
+        Instance.new("Tool", plr.Backpack).Name = "Stoic Bomb"
+        Instance.new("Tool", plr.Backpack).Name = "20-20-20 Dropkick"
+    end
+     
+    game:GetService("UserInputService").InputBegan:Connect(function(input, typing)
+        if typing then return end
+        if input.KeyCode == Enum.KeyCode.G then
+
+        end
+    end)
 end
+
+-- Start here:
+
+give_moveset()

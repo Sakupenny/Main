@@ -1,0 +1,8 @@
+{
+    "Lua.diagnostics.globals": [
+        "Instance",
+        "game",
+        "Enum",
+        "task"
+    ]
+}
