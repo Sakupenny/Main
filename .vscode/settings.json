@@ -3,6 +3,13 @@
         "Instance",
         "game",
         "Enum",
-        "task"
+        "task",
+        "Vector3",
+        "loadstring",
+        "CFrame",
+        "Color3"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field"
     ]
 }
