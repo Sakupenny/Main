@@ -7,7 +7,9 @@
         "Vector3",
         "loadstring",
         "CFrame",
-        "Color3"
+        "Color3",
+        "UDim2",
+        "wait"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"
