@@ -9,7 +9,15 @@
         "CFrame",
         "Color3",
         "UDim2",
-        "wait"
+        "wait",
+        "getgenv",
+        "TweenInfo",
+        "workspace",
+        "setclipboard",
+        "syn",
+        "http_request",
+        "request",
+        "http"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"
