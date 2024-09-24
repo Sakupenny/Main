@@ -1,7 +1,5 @@
 # GojoHub License Agreement
 
-**Effective Date:** [Insert Date]
-
 ## License Grant
 
 You are granted a non-exclusive, non-transferable license to use GojoHub under the following conditions.
